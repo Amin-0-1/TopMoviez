@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavouriteVC" customModule="Movies" customModuleProvider="target">
+            <connections>
+                <outlet property="uiTable" destination="7Xc-DJ-cY0" id="f9m-hf-zw9"/>
+                <outlet property="uiTitle" destination="qtG-aQ-JZJ" id="fyg-LW-sXK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gke-Dr-L4N">
+                    <rect key="frame" x="0.0" y="44" width="414" height="36"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUQ-nO-iT2">
+                            <rect key="frame" x="8" y="-7" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="N91-X3-fK4"/>
+                                <constraint firstAttribute="width" constant="50" id="rb4-FS-f1o"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system">
+                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="backBtnPressed:" destination="-1" eventType="touchUpInside" id="PNY-ge-SRE"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtG-aQ-JZJ">
+                            <rect key="frame" x="168" y="7.5" width="78.5" height="21"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dUQ-nO-iT2" firstAttribute="leading" secondItem="gke-Dr-L4N" secondAttribute="leading" constant="8" id="3cR-vx-3OE"/>
+                        <constraint firstItem="qtG-aQ-JZJ" firstAttribute="centerX" secondItem="gke-Dr-L4N" secondAttribute="centerX" id="6IU-Fl-T5N"/>
+                        <constraint firstAttribute="height" constant="36" id="MvH-vO-Xeo"/>
+                        <constraint firstItem="dUQ-nO-iT2" firstAttribute="centerY" secondItem="gke-Dr-L4N" secondAttribute="centerY" id="PWi-PN-BDf"/>
+                        <constraint firstItem="qtG-aQ-JZJ" firstAttribute="centerY" secondItem="gke-Dr-L4N" secondAttribute="centerY" id="Ucg-JI-H6w"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="layer.shadowOffset">
+                            <point key="value" x="10" y="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Xc-DJ-cY0">
+                    <rect key="frame" x="0.0" y="80" width="414" height="782"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.1333333333" green="0.16078431369999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7Xc-DJ-cY0" firstAttribute="top" secondItem="gke-Dr-L4N" secondAttribute="bottom" id="9Xz-HG-1bG"/>
+                <constraint firstItem="7Xc-DJ-cY0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KSe-d3-Chn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Xc-DJ-cY0" secondAttribute="trailing" id="SUz-sv-TH7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7Xc-DJ-cY0" secondAttribute="bottom" id="Y4a-QS-abH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gke-Dr-L4N" secondAttribute="trailing" id="hJX-Tr-Iiz"/>
+                <constraint firstItem="gke-Dr-L4N" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hSd-Jt-zxy"/>
+                <constraint firstItem="gke-Dr-L4N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="k6U-Gz-Bza"/>
+            </constraints>
+            <point key="canvasLocation" x="-23" y="77"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
