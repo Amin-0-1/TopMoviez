@@ -11,7 +11,6 @@ import Foundation
 class MainPresenter: MainPresenterProtocol {
     var isPaginate: Bool!
     var datasource: UICollectionViewDiffableDataSource<Sections, Movie>!
-    
     var page: Int!{
         willSet{
             print("pages is \(newValue ?? 2)")
@@ -49,7 +48,6 @@ extension MainPresenter: MainPresenterToView{
     }
     
     func onStartPoint() {
-        interactor.generateToken()
         self.fetch(endPoint: .upcoming, paging: false)
     }
     
@@ -84,10 +82,6 @@ extension MainPresenter: MainPresenterToView{
     }
 }
 extension MainPresenter: MainPresenterToInteractor{
-    
-    func onFinishGeneratingToken(token: Token) {
-        print("+++++++token is \(token)")
-    }
     
     func onFinishFetchingUpcoming(withData upcoming: [Movie]) {
         view.onFinishFetchingUpcoming(withData: upcoming)

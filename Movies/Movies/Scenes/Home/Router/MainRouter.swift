@@ -22,7 +22,7 @@ class MainRouter: MainRouterProtocol{
 
 extension MainRouter : MainRouterToPresenter{
 
-    static func createModule() -> UIViewController {
+    static func createModule(asAGuest:Bool) -> UIViewController {
         let view = MainViewController() as MainViewController
         let interactor = MainInteractor(remote: Remote())
         let presenter = MainPresenter()
@@ -39,7 +39,6 @@ extension MainRouter : MainRouterToPresenter{
     func showConnectionIssues() {
         let vc = ConnectionRouter.createModule()
         vc.modalPresentationStyle = .fullScreen
-        
         viewController.present(vc, animated: true)
     }
 

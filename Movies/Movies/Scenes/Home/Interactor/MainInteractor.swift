@@ -7,6 +7,18 @@
 
 import Foundation
 
+func preparePosterPathes(toMovies movies :inout [Movie]){
+    for (index,_) in movies.enumerated(){
+        guard let poster = movies[index].posterPath else {
+            guard let poster2 = movies[index].backdropPath else {  continue  }
+            movies[index].posterPath = Target.image(poster2).fullPath
+            continue
+        }
+        movies[index].posterPath = Target.image(poster).fullPath
+        continue
+    }
+}
+
 class MainInteractor{
     
     var remote: RemoteProtocol!
@@ -16,36 +28,10 @@ class MainInteractor{
         self.remote = remote
     }
     
-    private func generatePostersPathes(toMovies movies :inout [Movie]){
-        for (index,_) in movies.enumerated(){
-            guard let poster = movies[index].posterPath else {
-                guard let poster2 = movies[index].backdropPath else {  continue  }
-                movies[index].posterPath = Target.image(poster2).fullPath
-                continue
-            }
-            movies[index].posterPath = Target.image(poster).fullPath
-            continue
-        }
-    }
+    
 }
 
 extension MainInteractor: MainInteractorToPresenter{
-    func generateToken() {
-        remote.generateToken(target: .token) {[weak self] token in
-            guard let self = self else {return}
-            
-            switch token{
-                
-            case .success(let token):
-                self.presenter.onFinishGeneratingToken(token:token)
-            case .failure(let error):
-                print(error.localizedDescription)
-                break
-            }
-            
-        }
-        
-    }
     func fetch(endPoint: Targets,page: Int) {
         
         let target = getApiTarget(fromTarget: endPoint, andPage: page)
@@ -54,16 +40,18 @@ extension MainInteractor: MainInteractorToPresenter{
             
         case .popular(_),.upcoming(_),.top(_),.now(_):
             
-            remote.fetch(target: target, model: MoviesAPI.self) { result in
+            remote.fetch(target: target, model: MoviesAPI.self) {[weak self] result in
+                guard let self = self else {return}
+                
                 switch result{
                 case .success(let moviesApi):
                     var data = moviesApi.results
                     switch endPoint {
                     case .upcoming:
-                        self.generatePostersPathes(toMovies: &data)
+                        preparePosterPathes(toMovies: &data)
                         self.presenter.onFinishFetchingUpcoming(withData: data)
                     default:
-                        self.generatePostersPathes(toMovies: &data)
+                        preparePosterPathes(toMovies: &data)
                         self.presenter.onFinishFetching(withData: data)
                     }
                 case .failure(let error):
@@ -72,17 +60,17 @@ extension MainInteractor: MainInteractorToPresenter{
                 
             }
         case .latest:
-            remote.fetch(target: target, model: Movie.self) { result in
-                
+            remote.fetch(target: target, model: Movie.self) { [weak self] result in
+                guard let self = self else {return}
                 switch result{
                 case .success(let movie):
                     var data = [movie]
                     switch endPoint {
                     case .upcoming:
-                        self.generatePostersPathes(toMovies: &data)
+                        preparePosterPathes(toMovies: &data)
                         self.presenter.onFinishFetchingUpcoming(withData: data)
                     default:
-                        self.generatePostersPathes(toMovies: &data)
+                        preparePosterPathes(toMovies: &data)
                         self.presenter.onFinishFetching(withData: data)
                     }
                 case .failure(let error):

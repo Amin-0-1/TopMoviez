@@ -20,7 +20,7 @@ class SplashViewController: UIViewController,SplashViewProtocol {
         animationView.animationSpeed = 2
         animationView.play()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.3) { [weak self] in
             guard let self = self else {return}
             self.presenter.onFinishedAnimation()
             self.animationView.stop()

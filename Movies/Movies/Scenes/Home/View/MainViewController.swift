@@ -80,40 +80,7 @@ class MainViewController: BaseVC {
         favBtn.addTarget(self, action: #selector(favBtnSelector), for: .touchUpInside)
     }
     
-//    func configureTopView(){
-//        guard let navigationArea = navigationController?.navigationBar else {return}
-//        topView.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            topView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
-//            topView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-//            topView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-//            topView.heightAnchor.constraint(equalToConstant: navigationArea.frame.height)
-//        ])
-//    }
-//    private func configureTopTitle(withLable label:UILabel){
-//
-//        label.text = "Hola"
-//        label.textColor = .cornGreen
-//        label.textAlignment = .center
-//        guard let customFont = UIFont(name: "Poppins-Regular", size: 24) else {
-//            fatalError("""
-//                Failed to load the "Poppins-Regular" font.
-//                Make sure the font file is included in the project and the font name is spelled correctly.
-//                """
-//            )
-//        }
-//        label.font = UIFontMetrics.default.scaledFont(for: customFont)
-//        label.adjustsFontForContentSizeCategory = true
-//
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            label.centerYAnchor.constraint(equalTo: topView.centerYAnchor, constant: 0),
-////            label.leadingAnchor.constraint(equalTo: topView.safeAreaLayoutGuide.leadingAnchor, constant: 8),
-////            label.trailingAnchor.constraint(equalTo: topView.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-//            label.centerXAnchor.constraint(equalTo: topView.centerXAnchor, constant: 0),
-//            label.heightAnchor.constraint(equalToConstant: 36)
-//        ])
-//    }
+
     
     @objc private func favBtnSelector(){
         presenter.favButtonPressed()

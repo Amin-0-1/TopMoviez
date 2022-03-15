@@ -8,6 +8,7 @@
 import Foundation
 
 class FavouriteRouter: FavouriteRouterProtocol{
+
     var viewController: UIViewController!
     
     init(vc:UIViewController){
@@ -31,6 +32,9 @@ class FavouriteRouter: FavouriteRouterProtocol{
         viewController.navigationController?.popViewController(animated: true)
     }
     
+    func navigateToDetails(withId id: Int, andPosterPath path: String?) {
+        viewController.navigationController?.pushViewController(MovieDetailsRouter.createModule(withId: id, andPosterPath: path), animated: true)
+    }
     
     
 }

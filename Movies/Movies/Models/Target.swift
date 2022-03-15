@@ -11,7 +11,7 @@ import Moya
 
 private let API_KEY = "7dcf924f19364d108e4d438a072e0996"
 private let BASE_URL = "https://api.themoviedb.org/3/"
-
+private let AUTHORIZE = "https://www.themoviedb.org/authenticate/"
 private let IMAGE_URL = "https://image.tmdb.org/t/p/original/"
 enum Target{
     case image(String)
@@ -23,6 +23,8 @@ enum Target{
     case details(Int)
     case videos(Int)
     case token
+    case authorize(String)
+    case movie(Int)
 }
 extension Target: TargetType{
     
@@ -30,6 +32,9 @@ extension Target: TargetType{
         switch self {
         case .image(_):
             guard let url = URL(string: IMAGE_URL) else {fatalError("url is not valid")}
+            return url
+        case .authorize:
+            guard let url = URL(string: AUTHORIZE) else {fatalError("url is not valid")}
             return url
         default:
             guard let url = URL(string: BASE_URL) else {fatalError("url is not valid")}
@@ -58,12 +63,17 @@ extension Target: TargetType{
             return "movie/\(id)/videos"
         case .token:
             return "authentication/token/new"
-            
+        case .authorize(let token):
+            return "\(token)"
+        case .movie(let id):
+            return "movie/"
         }
     }
     
     var method: Moya.Method {
         switch self {
+//        case .authorize:
+//            return .post
         default:
             return .get
         }
@@ -79,6 +89,8 @@ extension Target: TargetType{
             return .requestParameters(parameters: ["api_key":API_KEY,"language":"en-US","page":page], encoding: URLEncoding.queryString)
         case .now(let page):
             return .requestParameters(parameters: ["api_key":API_KEY,"language":"en-US","page":page], encoding: URLEncoding.queryString)
+        case .authorize(_):
+            return .requestParameters(parameters: [:], encoding: URLEncoding.default)
         default :
             return .requestParameters(parameters: ["api_key":API_KEY,"language":"en-US"], encoding: URLEncoding.queryString)
         }

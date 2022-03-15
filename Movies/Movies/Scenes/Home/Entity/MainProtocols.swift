@@ -32,7 +32,6 @@ protocol MainPresenterToView{
 }
 protocol MainInteractorToPresenter{
     func fetch(endPoint:Targets,page:Int)
-    func generateToken()
 }
 
 protocol MainPresenterProtocol {
@@ -48,7 +47,6 @@ protocol MainPresenterToInteractor: AnyObject{
     func onFinishFetching(withData data: [Movie])
     func onFinishFetchingUpcoming(withData upcoming: [Movie])
     func onFinishFetching(withError error:MoviesErrors)
-    func onFinishGeneratingToken(token:Token)
 }
 
 //MARK: Router

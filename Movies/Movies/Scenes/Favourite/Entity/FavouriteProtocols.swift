@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: View protocols
 
-protocol FavouriteViewToPresenter:AnyObject{
+protocol FavouriteViewToPresenter:BaseView,AnyObject{
     func onFinishFetching()
 }
 
@@ -19,10 +19,12 @@ protocol FavouritePresenterToViewProtocol{
     func onBackButtonPressed()
     func onScreenAppeared()
     func getFavsCount()->Int
-    func getModel(forIndex index:Int)->FavouriteMovie
+    func getModel(forIndex index:Int)->Movie
+    func onUserSelectItem(atIndex index:Int)
 }
 protocol FavouritePresenterToInteractorProtocol: AnyObject{
-    func onFinishFetching(withData data:[FavouriteMovie])
+//    func onFinishFetching(withData data:[FavouriteMovie])
+    func onFinishFetching(withData data:[Movie])
 }
 
 
@@ -34,5 +36,6 @@ protocol FavouriteInteractorProtocol{
 //MARK: Router
 protocol FavouriteRouterProtocol{
     func pop()
+    func navigateToDetails(withId id: Int, andPosterPath path: String?)
 }
 

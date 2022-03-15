@@ -60,7 +60,7 @@ class Remote: RemoteProtocol{
     }
     
     func fetch<T:Codable>(target:Target,model:T.Type,completion: @escaping (Result<T, MoviesErrors>) -> Void) {
-        
+        print("++++++++",target.baseURL.absoluteURL)
         if connectivity.isConnected(){
             api.request(target) { result in
                 

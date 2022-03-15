@@ -11,16 +11,16 @@ class FavouritePresenter{
     var interactor:FavouriteInteractorProtocol!
     weak var view:FavouriteViewToPresenter!
     var router:FavouriteRouter!
-    private var favourites:[FavouriteMovie]!
-    
+    private var favouriteMovies:[Movie]!
     init(){
-        favourites = []
+        favouriteMovies = []
     }
 }
 
 extension FavouritePresenter: FavouritePresenterToViewProtocol{
-    
+
     func onScreenAppeared() {
+        view.loading(status: true)
         interactor.onScreenAppeared()
     }
     
@@ -29,20 +29,25 @@ extension FavouritePresenter: FavouritePresenterToViewProtocol{
     }
     
     func getFavsCount() -> Int {
-        return favourites.count
+        return favouriteMovies.count
     }
     
-    func getModel(forIndex index: Int) -> FavouriteMovie {
-        return favourites[index]
+    func getModel(forIndex index: Int) -> Movie {
+        return favouriteMovies[index]
     }
+    func onUserSelectItem(atIndex index: Int) {
+        
+        let movie = favouriteMovies[index]
+        router.navigateToDetails(withId: movie.id, andPosterPath: movie.posterPath)
+    }
+    
     
 }
 
 extension FavouritePresenter: FavouritePresenterToInteractorProtocol{
-    func onFinishFetching(withData data: [FavouriteMovie]) {
-        favourites = data
+    func onFinishFetching(withData data: [Movie]) {
+        favouriteMovies = data
         view.onFinishFetching()
+        view.loading(status: false)
     }
-    
-    
 }

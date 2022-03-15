@@ -8,6 +8,7 @@
 import Foundation
 
 class SplashRouter: SplashRouterProtocol{
+    
     var view: UIViewController!
     
     init(viewController: UIViewController? = nil){
@@ -18,16 +19,18 @@ class SplashRouter: SplashRouterProtocol{
         let view = SplashViewController()
         let router = SplashRouter(viewController: view)
         let presenter = Splashpresenter()
+        let interactor = SplashInteractor()
         
         view.presenter = presenter
         presenter.router = router
+        presenter.interactor = interactor
+        interactor.presenter = presenter
         
         return view
     }
     
     func navigateToMain() {
-        let vc = MainRouter.createModule()
-        
+        let vc = MainRouter.createModule(asAGuest: false)
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         nav.modalTransitionStyle = .crossDissolve

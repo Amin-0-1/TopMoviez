@@ -23,8 +23,14 @@ protocol SplashPresenterToView{
 
 
 protocol SplashRouterProtocol{
-    var view:UIViewController! {get set}
     func navigateToMain()
+
 }
 
+protocol SplashInteractorProtocol{
+    func getUserStatus()
+}
 
+protocol SplashPresenterToInteractor{
+    func onGettingUserStatus(isFirst:Bool)
+}
