@@ -42,6 +42,7 @@ class FavouriteInteractor: FavouriteInteractorProtocol{
         group.notify(queue: .main) {
             preparePosterPathes(toMovies: &self.movies)
             self.presenter.onFinishFetching(withData: self.movies)
+            self.movies = []
         }
     }
     

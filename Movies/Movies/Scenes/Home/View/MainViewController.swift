@@ -31,7 +31,7 @@ class MainViewController: BaseVC {
         
         
         configureFavBtn()
-        configureMenuBtn()
+//        configureMenuBtn()
         
         configureCollection()
         configureDatasource()
@@ -62,7 +62,7 @@ class MainViewController: BaseVC {
     }
     
     @objc private func menuBtnSelector(){
-        
+        presenter.menuButtonPressed()
     }
     
     private func configureFavBtn(){
@@ -132,7 +132,8 @@ extension MainViewController: MainViewToPresenter{
         }
         snapshot.appendSections([.upcoming])
         snapshot.appendItems(withData,toSection: .upcoming)
-        presenter.datasource.apply(snapshot,animatingDifferences: true)
+        presenter.datasource.applySnapshotUsingReloadData(snapshot, completion: nil)
+//        presenter.datasource.apply(snapshot,animatingDifferences: true)
 
         collection.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
     }
@@ -147,7 +148,8 @@ extension MainViewController: MainViewToPresenter{
         }
         snapshot.appendSections([selected])
         snapshot.appendItems(withData,toSection: selected)
-        presenter.datasource.apply(snapshot,animatingDifferences: true)
+        presenter.datasource.applySnapshotUsingReloadData(snapshot, completion: nil)
+//        presenter.datasource.apply(snapshot,animatingDifferences: true)
         collection.refreshControl?.endRefreshing()
         collection.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
     }
@@ -156,6 +158,7 @@ extension MainViewController: MainViewToPresenter{
         guard let selected = Sections(rawValue: Int(segment.selectedSegmentIndex) + 1) else {fatalError("unable to get section with index \(segment.selectedSegmentIndex)")}
         
         snapshot.appendItems(page, toSection: selected)
+//        presenter.datasource.applySnapshotUsingReloadData(snapshot, completion: nil)
         presenter.datasource.apply(snapshot,animatingDifferences: true)
     }
     

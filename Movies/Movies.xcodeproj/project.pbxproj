@@ -54,6 +54,9 @@
 		30830CB5273912E1007E55DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30830CB4273912E1007E55DB /* Assets.xcassets */; };
 		3084747E275E0B03002A3EFB /* VideosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084747D275E0B03002A3EFB /* VideosApi.swift */; };
 		3084CED927BD3987001C4573 /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084CED827BD3987001C4573 /* MainInteractorTests.swift */; };
+		308BBC1D285B344400599873 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BBC1B285B344400599873 /* SideMenuVC.swift */; };
+		308BBC21285B347400599873 /* SideMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BBC20285B347400599873 /* SideMenuRouter.swift */; };
+		308BBC23285B35C100599873 /* SideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BBC22285B35C100599873 /* SideMenuPresenter.swift */; };
 		308E284A277DD1FF00BE2E80 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308E2849277DD1FF00BE2E80 /* BaseVC.swift */; };
 		309767D927550A73003E2113 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309767D727550A73003E2113 /* GenreCell.swift */; };
 		309767DA27550A73003E2113 /* GenreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 309767D827550A73003E2113 /* GenreCell.xib */; };
@@ -64,6 +67,7 @@
 		309B662C277B082F004DAD7C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 309B662B277B082F004DAD7C /* Realm */; };
 		309B662E277B082F004DAD7C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 309B662D277B082F004DAD7C /* RealmSwift */; };
 		309B6630277B1C2A004DAD7C /* RealmFavouriteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B662F277B1C2A004DAD7C /* RealmFavouriteDB.swift */; };
+		30AB604A2860778E009A227E /* not-found.json in Resources */ = {isa = PBXBuildFile; fileRef = 30AB60492860778E009A227E /* not-found.json */; };
 		30AC1BD327427F1E0012C65D /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30AC1BC027427F1E0012C65D /* Poppins-ThinItalic.ttf */; };
 		30AC1BD427427F1E0012C65D /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30AC1BC127427F1E0012C65D /* Poppins-ExtraLightItalic.ttf */; };
 		30AC1BD627427F1E0012C65D /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30AC1BC327427F1E0012C65D /* Poppins-Light.ttf */; };
@@ -89,6 +93,7 @@
 		30BBFE0B275CB0AF007F7197 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 30BBFE0A275CB0AF007F7197 /* Cosmos */; };
 		30D5F5FB2746A6640000AA02 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5F5FA2746A6640000AA02 /* HMSegmentedControl.m */; };
 		30D5F5FD2746AEFA0000AA02 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D5F5FC2746AEFA0000AA02 /* Poppins-Bold.ttf */; };
+		30D9FB62285F606000B8E965 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 30D9FB61285F606000B8E965 /* SideMenu */; };
 		30FB3FF4277C86CE00C51F90 /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB3FF2277C86CE00C51F90 /* FavouriteVC.swift */; };
 		30FB3FF5277C86CE00C51F90 /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FB3FF3277C86CE00C51F90 /* FavouriteVC.xib */; };
 		30FB3FF7277C88E700C51F90 /* FavouriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB3FF6277C88E700C51F90 /* FavouriteRouter.swift */; };
@@ -156,6 +161,9 @@
 		30830CB9273912E1007E55DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3084747D275E0B03002A3EFB /* VideosApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosApi.swift; sourceTree = "<group>"; };
 		3084CED827BD3987001C4573 /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
+		308BBC1B285B344400599873 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		308BBC20285B347400599873 /* SideMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRouter.swift; sourceTree = "<group>"; };
+		308BBC22285B35C100599873 /* SideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuPresenter.swift; sourceTree = "<group>"; };
 		308E2849277DD1FF00BE2E80 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		309767D727550A73003E2113 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		309767D827550A73003E2113 /* GenreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCell.xib; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 		309A78842743DA90002CC67F /* MainVC+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+Collection.swift"; sourceTree = "<group>"; };
 		309A78862743E5A0002CC67F /* CollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeader.swift; sourceTree = "<group>"; };
 		309B662F277B1C2A004DAD7C /* RealmFavouriteDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFavouriteDB.swift; sourceTree = "<group>"; };
+		30AB60492860778E009A227E /* not-found.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "not-found.json"; sourceTree = "<group>"; };
 		30AC1BC027427F1E0012C65D /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		30AC1BC127427F1E0012C65D /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		30AC1BC327427F1E0012C65D /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -213,6 +222,7 @@
 				30BBFE0B275CB0AF007F7197 /* Cosmos in Frameworks */,
 				30AC1BF827429D650012C65D /* Toast in Frameworks */,
 				30B1C968273ABF6B004ED21B /* Moya in Frameworks */,
+				30D9FB62285F606000B8E965 /* SideMenu in Frameworks */,
 				30B1C965273ABAE9004ED21B /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +485,24 @@
 			path = Movies;
 			sourceTree = "<group>";
 		};
+		308BBC1A285B341500599873 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				308BBC20285B347400599873 /* SideMenuRouter.swift */,
+				308BBC1F285B344E00599873 /* View */,
+				308BBC22285B35C100599873 /* SideMenuPresenter.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		308BBC1F285B344E00599873 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				308BBC1B285B344400599873 /* SideMenuVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		309767D627550A4A003E2113 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				30AC1BBE27427F1E0012C65D /* fonts */,
+				30AB60492860778E009A227E /* not-found.json */,
 				304B3416275F71F2002F488D /* loader.json */,
 				30830CB4273912E1007E55DB /* Assets.xcassets */,
 			);
@@ -572,6 +601,7 @@
 				302E62C7273BE2CB00A38505 /* Home */,
 				30FB3FEC277C862300C51F90 /* Favourite */,
 				30270755274D408C00CCF517 /* Movie Details */,
+				308BBC1A285B341500599873 /* SideMenu */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -737,6 +767,7 @@
 				309B662B277B082F004DAD7C /* Realm */,
 				309B662D277B082F004DAD7C /* RealmSwift */,
 				30B7AE8427901EAF003AB761 /* YouTubeiOSPlayerHelper */,
+				30D9FB61285F606000B8E965 /* SideMenu */,
 			);
 			productName = Movies;
 			productReference = 30830CA8273912E0007E55DB /* Movies.app */;
@@ -779,6 +810,7 @@
 				304B33FF275F5D95002F488D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				309B662A277B082F004DAD7C /* XCRemoteSwiftPackageReference "realm-swift" */,
 				30B7AE8327901EAF003AB761 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+				30D9FB60285F606000B8E965 /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 30830CA9273912E0007E55DB /* Products */;
 			projectDirPath = "";
@@ -814,6 +846,7 @@
 				309A78812743AED2002CC67F /* UpcomingCell.xib in Resources */,
 				309767DA27550A73003E2113 /* GenreCell.xib in Resources */,
 				3000ED74274E5339001CE8DB /* ConnectionVC.xib in Resources */,
+				30AB604A2860778E009A227E /* not-found.json in Resources */,
 				304B3417275F71F2002F488D /* loader.json in Resources */,
 				30AC1BDD27427F1E0012C65D /* Poppins-Regular.ttf in Resources */,
 				30D5F5FD2746AEFA0000AA02 /* Poppins-Bold.ttf in Resources */,
@@ -861,6 +894,7 @@
 				307374C127DE20E10001C4B6 /* SplashInteractor.swift in Sources */,
 				309B6630277B1C2A004DAD7C /* RealmFavouriteDB.swift in Sources */,
 				30D5F5FB2746A6640000AA02 /* HMSegmentedControl.m in Sources */,
+				308BBC1D285B344400599873 /* SideMenuVC.swift in Sources */,
 				30FB3FFD277CA5A200C51F90 /* FavouritePresenter.swift in Sources */,
 				3000ED6A274E4C7F001CE8DB /* ConnectionsProtocols.swift in Sources */,
 				3045956527DA48100034C8DD /* AnimateUIImageClick.swift in Sources */,
@@ -882,6 +916,7 @@
 				30AC1BED27428AF20012C65D /* Remote.swift in Sources */,
 				304B342B275FA47A002F488D /* MockRemote.swift in Sources */,
 				30B1C962273AB7F8004ED21B /* Target.swift in Sources */,
+				308BBC21285B347400599873 /* SideMenuRouter.swift in Sources */,
 				309767D927550A73003E2113 /* GenreCell.swift in Sources */,
 				30B8B11B27B52CAF0095888B /* Session.swift in Sources */,
 				305D1CC72753821A00844A2F /* BaseViewProtocols.swift in Sources */,
@@ -889,6 +924,7 @@
 				30830CAE273912E0007E55DB /* SceneDelegate.swift in Sources */,
 				30B3A50C27E0BD1000958091 /* FavouriteCell.swift in Sources */,
 				3000ED6B274E4C7F001CE8DB /* ConnectionPresenter.swift in Sources */,
+				308BBC23285B35C100599873 /* SideMenuPresenter.swift in Sources */,
 				305D1CC327537E5C00844A2F /* MovieDetailsRouter.swift in Sources */,
 				305D1CBF27537E4400844A2F /* MovieDetailsPresenter.swift in Sources */,
 				309A78802743AED2002CC67F /* MovieCell.swift in Sources */,
@@ -1242,6 +1278,14 @@
 				kind = branch;
 			};
 		};
+		30D9FB60285F606000B8E965 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1284,6 +1328,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 30BBFE09275CB0AF007F7197 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
+		};
+		30D9FB61285F606000B8E965 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30D9FB60285F606000B8E965 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

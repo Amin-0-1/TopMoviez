@@ -18,11 +18,8 @@ class MainRouter: MainRouterProtocol{
         let vc = FavouriteRouter.createModule()
         viewController.navigationController?.pushViewController(vc, animated: true)
     }
-}
-
-extension MainRouter : MainRouterToPresenter{
-
-    static func createModule(asAGuest:Bool) -> UIViewController {
+    
+    static func createModule() -> UIViewController {
         let view = MainViewController() as MainViewController
         let interactor = MainInteractor(remote: Remote())
         let presenter = MainPresenter()
@@ -35,7 +32,10 @@ extension MainRouter : MainRouterToPresenter{
         interactor.presenter = presenter
         return view
     }
-    
+}
+
+extension MainRouter : MainRouterToPresenter{
+
     func showConnectionIssues() {
         let vc = ConnectionRouter.createModule()
         vc.modalPresentationStyle = .fullScreen
@@ -44,6 +44,14 @@ extension MainRouter : MainRouterToPresenter{
 
     func navigateToDetails(withId id: Int,andPosterPath path:String?) {
         let vc = MovieDetailsRouter.createModule(withId: id,andPosterPath: path)
+        viewController.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToSideMenu() {
+        let vc = SideMenuRouter.createModule()
+        viewController.addChild(vc)
+        viewController.view.addSubview(vc.view)
+        vc.didMove(toParent: viewController)
         viewController.navigationController?.pushViewController(vc, animated: true)
     }
     

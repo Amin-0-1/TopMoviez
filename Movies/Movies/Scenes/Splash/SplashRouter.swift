@@ -30,7 +30,7 @@ class SplashRouter: SplashRouterProtocol{
     }
     
     func navigateToMain() {
-        let vc = MainRouter.createModule(asAGuest: false)
+        let vc = MainRouter.createModule()
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         nav.modalTransitionStyle = .crossDissolve

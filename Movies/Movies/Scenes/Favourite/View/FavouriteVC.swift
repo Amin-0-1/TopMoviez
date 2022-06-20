@@ -6,11 +6,12 @@
 //
 
 import UIKit
-
+import Lottie
 class FavouriteVC: UIViewController,BaseView{
         
     @IBOutlet weak var uiCollectionView: UICollectionView!
     @IBOutlet weak private var uiTitle: UILabel!
+    @IBOutlet weak var animationView: AnimationView!
     
     
     var presenter:FavouritePresenterToViewProtocol!
@@ -20,9 +21,19 @@ class FavouriteVC: UIViewController,BaseView{
         uiTitle.textColor = .cornGreen
         view.backgroundColor = .background
         configureBackBtn()
-        presenter.onScreenAppeared()
         configureTableView()
+        configureAnimation()
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.onScreenAppeared()
+    }
+    
+    private func configureAnimation(){
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 2
+        animationView.play()
     }
     private func configureBackBtn(){
         let back = UIButton(frame: .zero)
@@ -38,17 +49,6 @@ class FavouriteVC: UIViewController,BaseView{
      }
 }
 
-//extension FavouriteVC: UITableViewDelegate,UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return presenter.getFavsCount()
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavouriteCell.reusableId, for: indexPath) as? FavouriteCell else{fatalError("unable to dequeue")}
-//                cell.configureCell(withModel: presenter.getModel(forIndex: indexPath.row))
-//        return cell
-//    }
-//}
 extension FavouriteVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,6 +72,15 @@ extension FavouriteVC:UICollectionViewDelegate,UICollectionViewDataSource,UIColl
 }
 extension FavouriteVC: FavouriteViewToPresenter{
     func onFinishFetching() {
+        
+        if presenter.getFavsCount() > 0{
+            uiCollectionView.isHidden = false
+            animationView.isHidden = true
+        }else{
+            uiCollectionView.isHidden = true
+            animationView.isHidden = false
+        }
+        
         uiCollectionView.reloadData()
     }
 }

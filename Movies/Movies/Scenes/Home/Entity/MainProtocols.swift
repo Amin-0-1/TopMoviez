@@ -26,7 +26,7 @@ protocol MainPresenterToView{
     func fetch(withSelectedIndex index:Int,paging:Bool)
     func onTappedCell(withIndex index:IndexPath)
     func favButtonPressed()
-    
+    func menuButtonPressed()
     var datasource: UICollectionViewDiffableDataSource<Sections,Movie>! {get set}
     
 }
@@ -53,10 +53,10 @@ protocol MainPresenterToInteractor: AnyObject{
 
 protocol MainRouterProtocol{
     func navigateToFavourites()
-
 }
 protocol MainRouterToPresenter{
     func showConnectionIssues()
     func navigateToDetails(withId:Int,andPosterPath:String?)
     func navigateToFavourites()
+    func navigateToSideMenu()
 }

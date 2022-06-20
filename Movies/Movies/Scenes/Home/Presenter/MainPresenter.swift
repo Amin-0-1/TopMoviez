@@ -75,6 +75,12 @@ extension MainPresenter: MainPresenterToView{
         self.fetch(endPoint: endPoint,paging: paging)
         
     }
+    func menuButtonPressed() {
+        router.navigateToSideMenu()
+    }
+    func favButtonPressed() {
+        router.navigateToFavourites()
+    }
     func onTappedCell(withIndex index: IndexPath) {
         guard let movie = datasource.itemIdentifier(for: index) else {return}
 
@@ -113,9 +119,6 @@ extension MainPresenter: MainPresenterToInteractor{
         isPaginate = false
         view.loading(status: false)
         view.showError(error: error.description)
-    }
-    func favButtonPressed() {
-        router.navigateToFavourites()
     }
     
 }

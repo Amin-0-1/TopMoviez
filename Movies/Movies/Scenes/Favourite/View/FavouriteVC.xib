@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavouriteVC" customModule="Movies" customModuleProvider="target">
             <connections>
+                <outlet property="animationView" destination="YoW-xt-y1Z" id="WDB-kq-5Kh"/>
                 <outlet property="uiCollectionView" destination="ZPB-oF-ezy" id="YSB-2J-vtq"/>
                 <outlet property="uiTitle" destination="qtG-aQ-JZJ" id="fyg-LW-sXK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -67,7 +68,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZPB-oF-ezy">
+                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZPB-oF-ezy">
                     <rect key="frame" x="0.0" y="90" width="414" height="772"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a8I-SS-54o">
@@ -77,17 +78,28 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YoW-xt-y1Z" customClass="AnimationView" customModule="Lottie">
+                    <rect key="frame" x="0.0" y="80" width="414" height="782"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="not-found"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1333333333" green="0.16078431369999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="YoW-xt-y1Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="APE-58-Y8x"/>
                 <constraint firstItem="ZPB-oF-ezy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="F8Y-qa-oky"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZPB-oF-ezy" secondAttribute="bottom" id="IIO-Bo-yuM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZPB-oF-ezy" secondAttribute="trailing" id="KXG-Pe-XUM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YoW-xt-y1Z" secondAttribute="trailing" id="SMa-EF-YDm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gke-Dr-L4N" secondAttribute="trailing" id="hJX-Tr-Iiz"/>
                 <constraint firstItem="gke-Dr-L4N" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hSd-Jt-zxy"/>
                 <constraint firstItem="ZPB-oF-ezy" firstAttribute="top" secondItem="gke-Dr-L4N" secondAttribute="bottom" constant="10" id="jnk-97-zI0"/>
                 <constraint firstItem="gke-Dr-L4N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="k6U-Gz-Bza"/>
+                <constraint firstItem="YoW-xt-y1Z" firstAttribute="top" secondItem="gke-Dr-L4N" secondAttribute="bottom" id="rtp-Eq-ccG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YoW-xt-y1Z" secondAttribute="bottom" id="weP-qn-Zum"/>
             </constraints>
             <point key="canvasLocation" x="-23" y="77"/>
         </view>
