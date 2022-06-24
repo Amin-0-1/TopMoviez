@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,28 +18,40 @@
                 <rect key="frame" x="0.0" y="0.0" width="416" height="218"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-Yz-wxc">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-Yz-wxc">
                         <rect key="frame" x="0.0" y="0.0" width="416" height="218"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
+                    <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRc-EF-XKz">
+                        <rect key="frame" x="344" y="166" width="64" height="44"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" scale="default" weight="bold"/>
+                        </buttonConfiguration>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" name="AccentColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="CUC-Yz-wxc" secondAttribute="bottom" id="KBU-eP-Tsu"/>
+                <constraint firstAttribute="bottom" secondItem="jRc-EF-XKz" secondAttribute="bottom" constant="8" id="OOj-Fv-8Ym"/>
                 <constraint firstItem="CUC-Yz-wxc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="c9O-yq-itD"/>
+                <constraint firstAttribute="trailing" secondItem="jRc-EF-XKz" secondAttribute="trailing" constant="8" id="gVi-yQ-HB6"/>
                 <constraint firstAttribute="trailing" secondItem="CUC-Yz-wxc" secondAttribute="trailing" id="meE-gp-fh9"/>
                 <constraint firstItem="CUC-Yz-wxc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="n9X-yG-q2M"/>
             </constraints>
             <size key="customSize" width="416" height="218"/>
             <connections>
                 <outlet property="uiImage" destination="CUC-Yz-wxc" id="aRH-nZ-fjs"/>
+                <outlet property="uiSelection" destination="jRc-EF-XKz" id="F51-dp-9MT"/>
             </connections>
             <point key="canvasLocation" x="80" y="147"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

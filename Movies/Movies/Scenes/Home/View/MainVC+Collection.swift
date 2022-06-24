@@ -34,7 +34,6 @@ extension MainViewController{
         ])
         collection.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         collection.backgroundColor = .clear
-        collection.delegate = self
         let nib = UINib(nibName: "UpcomingCell", bundle: nil)
         collection.register(nib, forCellWithReuseIdentifier: MovieCell.id)
         collection.register(CollectionHeader.self, forSupplementaryViewOfKind: self.headerSupplementaryKind, withReuseIdentifier: CollectionHeader.id)
@@ -168,12 +167,13 @@ extension MainViewController: UICollectionViewDelegate{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
-        
+        guard let footer = footer else {return}
+        print("scrol")
         guard isPaginating == false else {
             return
         }
         
-        if position > (collection.contentSize.height + 60) - (scrollView.frame.size.height) {
+        if position > (collection.contentSize.height + 60) - (scrollView.frame.size.height) && position != 0.0 {
             footer.startAnimating()
             self.presenter.fetch(withSelectedIndex: Int(self.segment.selectedSegmentIndex), paging: true)
         }

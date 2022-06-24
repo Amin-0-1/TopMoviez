@@ -91,6 +91,8 @@
 		30B7AE8527901EAF003AB761 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 30B7AE8427901EAF003AB761 /* YouTubeiOSPlayerHelper */; };
 		30B8B11B27B52CAF0095888B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8B11A27B52CAF0095888B /* Session.swift */; };
 		30BBFE0B275CB0AF007F7197 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 30BBFE0A275CB0AF007F7197 /* Cosmos */; };
+		30D58A642861E0B100E60825 /* MainVC+SearchConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D58A632861E0B100E60825 /* MainVC+SearchConformance.swift */; };
+		30D58A662862026700E60825 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D58A652862026700E60825 /* URLRequest.swift */; };
 		30D5F5FB2746A6640000AA02 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5F5FA2746A6640000AA02 /* HMSegmentedControl.m */; };
 		30D5F5FD2746AEFA0000AA02 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D5F5FC2746AEFA0000AA02 /* Poppins-Bold.ttf */; };
 		30D9FB62285F606000B8E965 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 30D9FB61285F606000B8E965 /* SideMenu */; };
@@ -191,6 +193,8 @@
 		30B3A50A27E0BD1000958091 /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
 		30B3A50B27E0BD1000958091 /* FavouriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
 		30B8B11A27B52CAF0095888B /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		30D58A632861E0B100E60825 /* MainVC+SearchConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+SearchConformance.swift"; sourceTree = "<group>"; };
+		30D58A652862026700E60825 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		30D5F5F62746A4F90000AA02 /* HMSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		30D5F5F92746A6630000AA02 /* Movies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Movies-Bridging-Header.h"; sourceTree = "<group>"; };
 		30D5F5FA2746A6640000AA02 /* HMSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
@@ -378,6 +382,7 @@
 			children = (
 				30830CAF273912E0007E55DB /* MainViewController.swift */,
 				309A78842743DA90002CC67F /* MainVC+Collection.swift */,
+				30D58A632861E0B100E60825 /* MainVC+SearchConformance.swift */,
 				309A787D2743A91A002CC67F /* Cell */,
 			);
 			path = View;
@@ -588,6 +593,7 @@
 				30AC1BE5274282A90012C65D /* Color.swift */,
 				30AC1BF92742B53A0012C65D /* UIView.swift */,
 				3045956427DA48100034C8DD /* AnimateUIImageClick.swift */,
+				30D58A652862026700E60825 /* URLRequest.swift */,
 			);
 			path = Extenstion;
 			sourceTree = "<group>";
@@ -889,6 +895,8 @@
 				3041ABC9279EB31800AED26C /* Token.swift in Sources */,
 				3000ED73274E5339001CE8DB /* ConnectionVC.swift in Sources */,
 				3044B30D273D63970033C6FD /* MainProtocols.swift in Sources */,
+				30D58A662862026700E60825 /* URLRequest.swift in Sources */,
+				30D58A642861E0B100E60825 /* MainVC+SearchConformance.swift in Sources */,
 				30270754274D3C5E00CCF517 /* CollectionSections.swift in Sources */,
 				3044B311273D73730033C6FD /* MainRouter.swift in Sources */,
 				307374C127DE20E10001C4B6 /* SplashInteractor.swift in Sources */,

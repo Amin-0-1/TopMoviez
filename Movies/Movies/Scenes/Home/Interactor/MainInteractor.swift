@@ -32,6 +32,30 @@ class MainInteractor{
 }
 
 extension MainInteractor: MainInteractorToPresenter{
+ 
+    func searching(forText text: String) {
+        guard !text.isEmpty else {
+//            presenter.onFinishSearching(withData: [])
+            presenter.onEmptySearch()
+            return
+        }
+        remote.fetch(target: .search(text), model: MoviesAPI.self) { result in
+            switch result{
+            case .success(let moviesResult):
+                
+                var movies = [Movie]()
+                moviesResult.results.forEach { movie in
+                    movies.append(movie)
+                }
+                preparePosterPathes(toMovies: &movies)
+                self.presenter.onFinishSearching(withData: movies)
+            case .failure(let error):
+                assertionFailure("an error occured")
+                self.presenter.onFinishFetching(withError: error)
+                print(error.localizedDescription)
+            }
+        }
+    }
     func fetch(endPoint: Targets,page: Int) {
         
         let target = getApiTarget(fromTarget: endPoint, andPage: page)

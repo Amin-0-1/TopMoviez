@@ -10,6 +10,8 @@ import Foundation
 
 class MainPresenter: MainPresenterProtocol {
     var isPaginate: Bool!
+    private var isSearching:Bool = false
+    private var searchResults = [Movie]()
     var datasource: UICollectionViewDiffableDataSource<Sections, Movie>!
     var page: Int!{
         willSet{
@@ -35,23 +37,49 @@ class MainPresenter: MainPresenterProtocol {
         }else{
             view.loading(status: true)
             isPaginate = false
-            view.paginate(status: false)
+            view.paginate(status: isPaginate)
         }
         interactor.fetch(endPoint: endPoint,page: page)
         
     }
 }
 extension MainPresenter: MainPresenterToView{
+
     
+    func getModel(forIndex index: Int) -> Movie {
+        return searchResults[index]
+    }
+    
+
     var mainTitles: [String]! {
         return ["Top Rated","Popular","Now Playing","Latest"]
     }
     
+    func getSearchCount()->Int{
+        return searchResults.count
+    }
     func onStartPoint() {
         self.fetch(endPoint: .upcoming, paging: false)
     }
     
+    func onSearch() {
+        isSearching = !isSearching
+        resetPages()
+        if isSearching{
+            view.onSearching()
+        }else{
+            searchResults = []
+            view.dismissSearching()
+        }
+    }
+    
+    func searching(forText text: String) {
+
+        view.loading(status: true)
+        interactor.searching(forText: text)
+    }
     func fetch(withSelectedIndex index: Int,paging: Bool) {
+        guard !isSearching else {return}
         var endPoint : Targets
         switch index{
         case 0:
@@ -82,19 +110,33 @@ extension MainPresenter: MainPresenterToView{
         router.navigateToFavourites()
     }
     func onTappedCell(withIndex index: IndexPath) {
-        guard let movie = datasource.itemIdentifier(for: index) else {return}
-
-        router.navigateToDetails(withId: movie.id,andPosterPath: movie.posterPath)
+        if isSearching{
+            let movie = searchResults[index.item]
+            router.navigateToDetails(withId: movie.id,andPosterPath: movie.posterPath)
+        }else{
+            guard let movie = datasource.itemIdentifier(for: index) else {return}
+            router.navigateToDetails(withId: movie.id,andPosterPath: movie.posterPath)
+        }
     }
 }
 extension MainPresenter: MainPresenterToInteractor{
+    func onEmptySearch() {
+        view.loading(status: false)
+        searchResults = []
+        view.onFinishSearching()
+        view.onEmptySearch()
+    }
     
+    func onFinishSearching(withData data: [Movie]) {
+        view.loading(status: false)
+        searchResults = data
+        view.onFinishSearching()
+    }
     func onFinishFetchingUpcoming(withData upcoming: [Movie]) {
         view.onFinishFetchingUpcoming(withData: upcoming)
         fetch(endPoint: .top,paging: false)
     }
     func onFinishFetching(withData data: [Movie]) {
-        
         if isPaginate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {[unowned self] in
 //                self.view.loading(status: false)

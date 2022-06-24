@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
-          "version": "5.4.4"
+          "revision": "354dda32d89fc8cd4f5c46487f64957d355f53d8",
+          "version": "5.6.1"
         }
       },
       {
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/airbnb/lottie-ios",
         "state": {
           "branch": "master",
-          "revision": "e9c52fa3e2f962febb6fcc27a94eff15292130b2",
+          "revision": "a89a677c17f1bbbb39df8b4a2488e3f92f649403",
           "version": null
         }
       },
@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/Moya/Moya.git",
         "state": {
           "branch": "master",
-          "revision": "6959c4440315a6dcf7227ed70728c2c3d5eb28ee",
+          "revision": "42b4da6cf00ce35874f2aebebefb9564c2fdb799",
           "version": null
         }
       },
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/realm/realm-core",
         "state": {
           "branch": null,
-          "revision": "c3c11a841642ac93c27bd1edd61f989fc0bfb809",
-          "version": "11.6.1"
+          "revision": "fd48276f88f3d55dbdcdc9e8cbf32541811d5865",
+          "version": "12.1.0"
         }
       },
       {
@@ -60,7 +60,7 @@
         "repositoryURL": "https://github.com/realm/realm-swift",
         "state": {
           "branch": "master",
-          "revision": "048ba18f96833e5dc4e5e2709586d7954eebd76f",
+          "revision": "9f7a605dfcf6a60e019a296dc8d91c3b23837a82",
           "version": null
         }
       },

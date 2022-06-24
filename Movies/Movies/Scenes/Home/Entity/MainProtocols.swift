@@ -16,22 +16,31 @@ protocol MainViewToPresenter: BaseView,AnyObject{
     func onFinishFetchingUpcoming(withData : [Movie])
     func onFinishFetchingPage(withData page: [Movie] )
     func onFinishFetching(withData:[Movie])
+    func onFinishSearching()
     func paginate(status:Bool)
+    func onSearching()
+    func dismissSearching()
+    func onEmptySearch()
 }
 
 //MARK: Presenter
 protocol MainPresenterToView{
     var mainTitles:[String]! { get }
     func onStartPoint()
+    func onSearch()
+    func searching(forText text:String)
     func fetch(withSelectedIndex index:Int,paging:Bool)
     func onTappedCell(withIndex index:IndexPath)
     func favButtonPressed()
     func menuButtonPressed()
+    func getSearchCount()->Int
+    func getModel(forIndex index:Int)->Movie
     var datasource: UICollectionViewDiffableDataSource<Sections,Movie>! {get set}
     
 }
 protocol MainInteractorToPresenter{
     func fetch(endPoint:Targets,page:Int)
+    func searching(forText text:String)
 }
 
 protocol MainPresenterProtocol {
@@ -46,7 +55,9 @@ protocol MainPresenterProtocol {
 protocol MainPresenterToInteractor: AnyObject{
     func onFinishFetching(withData data: [Movie])
     func onFinishFetchingUpcoming(withData upcoming: [Movie])
+    func onFinishSearching(withData data:[Movie])
     func onFinishFetching(withError error:MoviesErrors)
+    func onEmptySearch()
 }
 
 //MARK: Router

@@ -25,6 +25,7 @@ enum Target{
     case token
     case authorize(String)
     case movie(Int)
+    case search(String)
 }
 extension Target: TargetType{
     
@@ -65,11 +66,12 @@ extension Target: TargetType{
             return "authentication/token/new"
         case .authorize(let token):
             return "\(token)"
-        case .movie(let id):
+        case .movie(_):
             return "movie/"
+        case .search(_):
+            return "search/movie"
         }
     }
-    
     var method: Moya.Method {
         switch self {
 //        case .authorize:
@@ -91,6 +93,8 @@ extension Target: TargetType{
             return .requestParameters(parameters: ["api_key":API_KEY,"language":"en-US","page":page], encoding: URLEncoding.queryString)
         case .authorize(_):
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
+        case .search(let text):
+            return .requestParameters(parameters: ["api_key":API_KEY,"language":"en-US","query":text], encoding: URLEncoding.queryString)
         default :
             return .requestParameters(parameters: ["api_key":API_KEY,"language":"en-US"], encoding: URLEncoding.queryString)
         }

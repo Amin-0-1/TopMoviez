@@ -11,10 +11,27 @@ import SDWebImage
 class FavouriteCell: UICollectionViewCell {
     static let reusableID = "FavouriteCellID"
     @IBOutlet weak private var uiImage: UIImageView!
+    @IBOutlet weak private var uiSelection: UIButton!
+    
+    
+    override var isSelected: Bool{
+        willSet{
+            if newValue == true{
+                uiSelection.isHidden = false
+                self.isHighlighted = true
+                uiImage.alpha = 0.5
+            }else{
+                uiSelection.isHidden = true
+                self.isHighlighted = false
+                uiImage.alpha = 1
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .clear
+
     }
     func configureCell(withModel model:Movie){
         guard let posterPath = model.posterPath , let url = URL(string: posterPath) else { return }
@@ -27,10 +44,8 @@ class FavouriteCell: UICollectionViewCell {
         uiImage.layer.cornerRadius = 12
         uiImage.layer.borderColor = UIColor.black.cgColor
         uiImage.layer.borderWidth = 0.6
-//        uiImage.layer.shadowColor = UIColor.black.cgColor
-//        uiImage.layer.shadowOpacity = 1
-//        uiImage.layer.shadowOffset = CGSize(width: 1, height: 2)
-//        uiImage.layer.shadowRadius = 1
+
     }
+
 
 }

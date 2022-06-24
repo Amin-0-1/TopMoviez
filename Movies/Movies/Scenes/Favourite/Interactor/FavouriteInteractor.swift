@@ -25,6 +25,9 @@ class FavouriteInteractor: FavouriteInteractorProtocol{
         let objects = dataSource.getAllFavourites()
         getFavouriteMovies(withObjects: objects)
     }
+    func deleteFavourite(id: Int) {
+        dataSource.removeFavourite(forId: id)
+    }
     private func getFavouriteMovies(withObjects objects:[FavouriteMovie]){
         
         objects.forEach { movie in
@@ -34,6 +37,7 @@ class FavouriteInteractor: FavouriteInteractorProtocol{
                 case .failure(let error):
                     print(error.localizedDescription)
                 case .success(let movie):
+                    
                     self.movies.append(movie)
                 }
                 self.group.leave()

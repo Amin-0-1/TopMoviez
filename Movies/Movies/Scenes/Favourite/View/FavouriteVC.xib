@@ -10,8 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavouriteVC" customModule="Movies" customModuleProvider="target">
             <connections>
                 <outlet property="animationView" destination="YoW-xt-y1Z" id="WDB-kq-5Kh"/>
+                <outlet property="uiBackBtn" destination="dUQ-nO-iT2" id="VCi-c5-s6o"/>
                 <outlet property="uiCollectionView" destination="ZPB-oF-ezy" id="YSB-2J-vtq"/>
                 <outlet property="uiTitle" destination="qtG-aQ-JZJ" id="fyg-LW-sXK"/>
+                <outlet property="uiTopView" destination="gke-Dr-L4N" id="Sbq-jO-Lue"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -18,7 +18,7 @@ class Remote: RemoteProtocol{
     var connectivity:Connectivity!
     
     init(connectivity:Connectivity? = Connectivity.shared){
-        api = MoyaProvider<Target>()
+        api = MoyaProvider<Target>(plugins:[NetworkLoggerPlugin()])
         self.connectivity = connectivity
     }
     
