@@ -96,17 +96,7 @@ class FavouriteVC: UIViewController,BaseView{
         
     }
     @objc private func deleteSelector(_ sender:UIButton){
-//        let alert = UIAlertController(title: "Unlike", message: "Are you sure you want to remove the slected movies from you favourite list?", preferredStyle: .alert)
-//        let yes = UIAlertAction(title: "YES", style: .destructive) { _ in
-//            self.presenter.onUserWantDelete()
-//        }
-//        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-//            self.dismiss(animated: true, completion: nil)
-//        }
-//        alert.addAction(yes)
-//        alert.addAction(cancel)
-//        alert.modalPresentationStyle = .pageSheet
-//        present(alert, animated: true, completion: nil)
+
         self.presenter.onUserWantDelete()
     }
     private func showDeleteBtn(){
